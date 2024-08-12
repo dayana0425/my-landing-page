@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
   <head>
     <!-- Google tag (gtag.js) -->
@@ -17,9 +12,10 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-5L2PHPG77F");
     </script>
+    <!-- End Google tag (gtag.js) -->
+
     <title>Daiana Bilbao | Software Engineer</title>
     <meta charset="utf-8" />
     <meta
@@ -28,17 +24,18 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
+
   <body class="is-preload">
     <!-- Header -->
     <header id="header">
       <div class="inner">
         <a href="#" class="image avatar"
-          ><img src="images/avatar.jpg" alt=""
+          ><img src="images/my-pics/daiana-headshot.jpeg" alt=""
         /></a>
         <h1>
-          <strong>I am Daiana</strong>, a Fullstack Software Engineer.<br />
-          responsive site template freebie<br />
-          crafted by <a href="http://html5up.net">HTML5 UP</a>.
+          <strong>I am Daiana</strong>,
+          <strong>a Fullstack Software Engineer! 👩🏽‍💻‍💻✨🩷🌸</strong>
+          <br />
         </h1>
       </div>
     </header>
@@ -48,25 +45,108 @@
       <!-- One -->
       <section id="one">
         <header class="major">
-          <h2>
-            Ipsum lorem dolor aliquam ante commodo<br />
-            magna sed accumsan arcu neque.
-          </h2>
+          <h2>A Byte About Me 🤓<br /></h2>
         </header>
+
         <p>
-          Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi
-          lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis
-          tortor primis integer massa adipiscing id nisi accumsan pellentesque
-          commodo blandit enim arcu non at amet id arcu magna. Accumsan orci
-          faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque
-          cubilia.
+          <strong>Daiana Bilbao</strong> is a
+          <strong>Fullstack Software Engineer</strong> with a strong passion for
+          emerging technologies like <em>Web3</em> and <em>AI</em>. As a
+          <strong>first-generation college graduate</strong>, she earned her
+          <strong>B.S. in Computer Science</strong> from
+          <strong>Colorado State University</strong>. Daiana has gained valuable
+          experience through internships at
+          <strong
+            ><em>Microsoft</em>, <em>Cloud Coach</em>, and
+            <em>NVIDIA</em></strong
+          >, as well as an externship at <strong><em>Twitter HQ</em></strong> in
+          San Francisco. Since graduating, she has been deeply involved in the
+          <em>web3 space</em> and has worked at a web3 startup called
+          <strong>Shell Protocol</strong> to build the future of finance.
         </p>
+
+        <div
+          id="byteAboutMe"
+          style="
+            display: none;
+            background-color: #ffe6e6;
+            border-radius: 10px;
+            padding: 20px;
+          "
+        >
+          <br />
+          <h3>Words from Daiana ~</h3>
+          <p>
+            I've always been a tech enthusiast since I was a little girl. My
+            favorite website was <em>Google</em> because, as a child of
+            immigrant parents who did not speak English, I had to be the
+            translator of everything—and Google was my best friend. 🙌
+          </p>
+          <p>
+            I am proudly from Argentina 🇦🇷 (Woo! Champions of the world! ⚽️),
+            with a mix of Bolivian 🇧🇴 and Mexican 🇲🇽 roots. Having grown up in
+            the States 🇺🇸, I also consider myself American.
+          </p>
+          <p>
+            I earned my <strong>B.S. in Computer Science</strong> from
+            <strong>Colorado State University</strong> in December 2021,
+            becoming the first in my family to graduate from college. During my
+            time at CSU, I was actively involved in outreach and mentorship as
+            the <strong>lead instructor for Girls Who Code</strong>. I completed
+            <strong>internships</strong> at
+            <strong
+              ><em>Microsoft</em>, <em>Cloud Coach</em>, and
+              <em>NVIDIA</em></strong
+            >, and even had an externship at <strong>Twitter HQ</strong> in San
+            Francisco during my freshman year—an unforgettable experience!
+          </p>
+          <p>
+            I am <em>intrigued</em> by emerging technologies such as
+            <strong>Web3</strong> and <strong>AI</strong>. For the past three
+            years, I've been deeply invested in <strong>Crypto</strong>,
+            <strong>DeFi</strong>, and <strong>Blockchain</strong>, and more
+            recently, I’ve begun exploring AI! You can always catch me trying or
+            tinkering with the latest tech trends.
+          </p>
+          <p>
+            Outside of tech, I enjoy <em>running</em>, <em>line dancing</em>,
+            and <em>playing pickleball</em>. I’ve won
+            <strong>5 Web3 Hackathons 🏆</strong>, and in the past, I
+            contributed to <strong>H.E.R. DAO LATAM</strong> as a
+            <em>Hackathon Lead</em>, traveling and hosting workshops to onboard
+            more women in LATAM into web3 as builders and founders through
+            participating in hackathons. ✨💙.
+          </p>
+        </div>
         <ul class="actions">
-          <li><a href="#" class="button">Learn More</a></li>
+          <li style="padding-top: 20px">
+            <a
+              href="#"
+              class="button"
+              id="readMoreBtn"
+              onclick="toggleByteAboutMe()"
+              >Read More</a
+            >
+          </li>
         </ul>
       </section>
 
-      <!-- Two -->
+      <script>
+        function toggleByteAboutMe() {
+          var content = document.getElementById("byteAboutMe");
+          var button = document.getElementById("readMoreBtn");
+
+          if (content.style.display === "none") {
+            content.style.display = "block";
+            button.textContent = "Read Less";
+          } else {
+            content.style.display = "none";
+            button.textContent = "Read More";
+          }
+        }
+      </script>
+
+      <!-- 
       <section id="two">
         <h2>Recent Work</h2>
         <div class="row">
@@ -116,15 +196,14 @@
         <ul class="actions">
           <li><a href="#" class="button">Full Portfolio</a></li>
         </ul>
-      </section>
+      </section>  -->
 
       <!-- Three -->
       <section id="three">
-        <h2>Get In Touch</h2>
+        <h2>Let's Connect! 💬</h2>
         <p>
-          Accumsan pellentesque commodo blandit enim arcu non at amet id arcu
-          magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem
-          vulputate lorem neque lorem ipsum dolor.
+          I would love to hear from you! Feel to reach out to chat, ask
+          questions, speaking engagements, or work opportunities.
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
@@ -159,23 +238,15 @@
             <ul class="labeled-icons">
               <li>
                 <h3 class="icon solid fa-home">
-                  <span class="label">Address</span>
+                  <span class="label"></span>
                 </h3>
-                1234 Somewhere Rd.<br />
-                Nashville, TN 00000<br />
-                United States
-              </li>
-              <li>
-                <h3 class="icon solid fa-mobile-alt">
-                  <span class="label">Phone</span>
-                </h3>
-                000-000-0000
+                Littleton, Colorado
               </li>
               <li>
                 <h3 class="icon solid fa-envelope">
                   <span class="label">Email</span>
                 </h3>
-                <a href="#">hello@untitled.tld</a>
+                <a href="#">daianabilbao.swe@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -503,31 +574,57 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
+        <!-- Links -->
         <ul class="icons">
           <li>
-            <a href="#" class="icon brands fa-twitter"
-              ><span class="label">Twitter</span></a
+            <a
+              href="https://www.linkedin.com/in/daianabilbao/"
+              class="icon brands fa-linkedin"
+              target="_blank"
+            >
+              <span class="label">Linkedin</span></a
             >
           </li>
           <li>
-            <a href="#" class="icon brands fa-github"
-              ><span class="label">Github</span></a
+            <a
+              href="https://github.com/dayana0425"
+              class="icon brands fa-github"
+              target="_blank"
             >
+              <span class="label">Github</span>
+            </a>
           </li>
           <li>
-            <a href="#" class="icon brands fa-dribbble"
-              ><span class="label">Dribbble</span></a
+            <a
+              href="https://twitter.com/hello_dayana"
+              class="icon brands fa-twitter"
+              target="_blank"
             >
+              <span class="label">Twitter</span>
+            </a>
           </li>
           <li>
-            <a href="#" class="icon solid fa-envelope"
-              ><span class="label">Email</span></a
+            <a
+              href="https://hashnode.com/@daianabilbao"
+              class="icon solid fa-heart"
+              target="_blank"
             >
+              <span class="label">Hashnode</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=daianabilbao.swe@gmail.com"
+              class="icon solid fa-envelope"
+              target="_blank"
+            >
+              <span class="label">Email</span>
+            </a>
           </li>
         </ul>
+        <!-- Copyright -->
         <ul class="copyright">
-          <li>&copy; Untitled</li>
-          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <li>&copy; Daiana Bilbao</li>
         </ul>
       </div>
     </footer>

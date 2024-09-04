@@ -24,7 +24,11 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
 
-	<link rel="icon" href="images/my-pics/daiana-headshot.jpeg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="images/my-pics/daiana-headshot.jpeg"
+      type="image/x-icon"
+    />
   </head>
 
   <body class="is-preload">
@@ -199,20 +203,30 @@
           <li><a href="#" class="button">Full Portfolio</a></li>
         </ul>
       </section>  -->
-
       <!-- Three -->
       <section id="three">
         <h2>Let's Connect! 💬</h2>
         <p>
-          I would love to hear from you! Feel to reach out to chat, ask
+          I would love to hear from you! Feel free to reach out to chat, ask
           questions, speaking engagements, or work opportunities.
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
-            <form method="post" action="#">
+            <!-- Formspree Integration with reCAPTCHA v3 -->
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/mvgpyrly"
+              method="POST"
+            >
               <div class="row gtr-uniform gtr-50">
                 <div class="col-6 col-12-xsmall">
-                  <input type="text" name="name" id="name" placeholder="Name" />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Name"
+                    required
+                  />
                 </div>
                 <div class="col-6 col-12-xsmall">
                   <input
@@ -220,6 +234,16 @@
                     name="email"
                     id="email"
                     placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required
                   />
                 </div>
                 <div class="col-12">
@@ -228,13 +252,21 @@
                     id="message"
                     placeholder="Message"
                     rows="4"
+                    required
                   ></textarea>
                 </div>
+                <input
+                  type="hidden"
+                  id="g-recaptcha-response"
+                  name="g-recaptcha-response"
+                />
               </div>
+              <ul class="actions" style="padding-top: 20px">
+                <li>
+                  <input type="submit" value="Send Message" />
+                </li>
+              </ul>
             </form>
-            <ul class="actions">
-              <li><input type="submit" value="Send Message" /></li>
-            </ul>
           </div>
           <div class="col-4 col-12-small">
             <ul class="labeled-icons">
@@ -248,12 +280,30 @@
                 <h3 class="icon solid fa-envelope">
                   <span class="label">Email</span>
                 </h3>
-                <a href="#">daianabilbao.swe@gmail.com</a>
+                <a href="#">daiana.swe@gmail.com</a>
               </li>
             </ul>
           </div>
         </div>
       </section>
+
+      <script src="https://www.google.com/recaptcha/api.js?render=6LdFyTYqAAAAAH2GTvfJukVPYrH8rKC8KQnCT6Ys"></script>
+
+      <script>
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            grecaptcha.ready(function () {
+              grecaptcha
+                .execute("6LdFyTYqAAAAAH2GTvfJukVPYrH8rKC8KQnCT6Ys", { action: "submit" })
+                .then(function (token) {
+                  document.getElementById("g-recaptcha-response").value = token;
+                  document.getElementById("contactForm").submit();
+                });
+            });
+          });
+      </script>
 
       <!-- Four -->
       <!--
@@ -616,7 +666,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
           </li>
           <li>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=daianabilbao.swe@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=daiana.swe@gmail.com"
               class="icon solid fa-envelope"
               target="_blank"
             >

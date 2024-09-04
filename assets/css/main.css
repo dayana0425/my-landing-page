@@ -2243,6 +2243,53 @@ input[type="radio"]+label:before {
 	width: 100%;
 }
 
+/* Default for smaller screens (mobile view) */
+.actions.responsive-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.actions.responsive-buttons li {
+	list-style: none;
+}
+
+/* For desktop view (larger than 768px width) */
+@media (min-width: 981px) {
+	.actions.responsive-buttons {
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-top: 0;
+	}
+
+	.actions.responsive-buttons li {
+		margin-bottom: 20px;
+		justify-content: flex-end;
+		margin-left: 15px;
+	}
+}
+
+.button.large.primary {
+	padding: 12px 24px;
+	font-size: 1.2em;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	line-height: 1;
+	transition:
+}
+
+.button.large.primary:hover {
+	background-color: ##a47f91;
+	text-decoration: none;
+	color: #fff;
+}
+
 .image.avatar {
 	border-radius: 100%;
 }
@@ -2458,7 +2505,7 @@ ul.actions.fit.stacked {
 	ul.actions:not(.fixed) li input[type="button"],
 	ul.actions:not(.fixed) li button,
 	ul.actions:not(.fixed) li .button {
-		width: 100%;
+		width: 50%;
 	}
 
 	ul.actions:not(.fixed) li input[type="submit"].icon:before,
@@ -2727,10 +2774,11 @@ input[type="button"]:disabled,
 }
 
 #header>.inner {
-	-moz-flex-grow: 1;
+	/* -moz-flex-grow: 1;
 	-webkit-flex-grow: 1;
 	-ms-flex-grow: 1;
 	flex-grow: 1;
+	 */
 	margin: 0 0 2em 0;
 }
 

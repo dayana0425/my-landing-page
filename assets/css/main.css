@@ -2281,7 +2281,7 @@ input[type="radio"]+label:before {
 	align-items: center;
 	height: 50px;
 	line-height: 1;
-	transition: background-color 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
 }
 
 .button.large.primary:hover {

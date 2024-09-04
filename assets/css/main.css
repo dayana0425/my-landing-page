@@ -3353,7 +3353,7 @@ body.is-touch .poptrox-popup .closer {
 		padding: 2.25em 0 0 0;
 	}
 
-	/* Poptrox */
+
 
 	.poptrox-popup {
 		border-radius: 0;
@@ -3366,6 +3366,7 @@ body.is-touch .poptrox-popup .closer {
 
 }
 
+/* Portfolio */
 .projects-section {
 	text-align: center;
 	padding: 3rem 0;
@@ -3443,7 +3444,6 @@ body.is-touch .poptrox-popup .closer {
 	background-color: #fff;
 }
 
-/* Responsive Layout */
 @media (max-width: 768px) {
 	.project-container {
 		margin-bottom: 1.5rem;

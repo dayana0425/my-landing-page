@@ -2301,6 +2301,29 @@ input[type="radio"]+label:before {
 .image.avatar img {
 	border-radius: 100%;
 	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: center;
+}
+
+blockquote {
+	font-style: italic;
+	margin: 1.5em 0;
+	padding: 1em;
+	background-color: #f9f9f9;
+	border-left: 4px solid #ccc;
+	line-height: 1.6;
+}
+  
+blockquote footer {
+	font-weight: bold;
+	text-align: right;
+	margin-top: 0.5em;
+}
+  
+blockquote ul {
+	margin-top: 0.5em;
+	padding-left: 1em;
 }
 
 /* List */

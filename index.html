@@ -39,7 +39,13 @@
           <img src="images/my-pics/daiana-sq-headshot.jpeg" alt="" />
         </a>
         <h1>
-          <strong>I am Daiana</strong>,
+          I am
+          <strong class="name-highlight">
+            Daiana
+            <span class="label">
+              Also spelled 'Dayana' & My nickname is 'Day'</span
+            > </strong
+          >,
           <strong>a Fullstack Software Engineer! 👩🏽‍💻✨🩷🌸</strong>
           <br />
         </h1>
@@ -48,12 +54,18 @@
       <!-- Portfolio and Blog Links -->
       <ul class="actions responsive-buttons">
         <li>
-          <a href="portfolio.html" class="button large primary">Portfolio</a>
+          <a href="portfolio.html" class="button large primary">
+            Portfolio
+            <span class="label">View my projects and work experience</span>
+          </a>
         </li>
         <li>
-          <a href="http://blog.daianabilbao.xyz" class="button large primary"
-            >Blog</a
-          >
+          <a href="http://blog.daianabilbao.xyz" class="button large primary">
+            Blog
+            <span class="label"
+              >Read my thoughts on tech, life, and everything in between</span
+            >
+          </a>
         </li>
       </ul>
     </header>
@@ -80,6 +92,7 @@
           San Francisco. Since graduating, she has been deeply involved in the
           <em>web3 space</em> and has worked at a web3 startup called
           <strong>Shell Protocol</strong> to build the future of finance.
+          She also worked at <strong>SpaceNav</strong>, where she improved the UI/UX of satellite operations tools to support space traffic management.
         </p>
 
         <div
@@ -109,9 +122,9 @@
             <li>I'm from Argentina 🇦🇷</li>
             <li>I'm a first-generation college graduate & DACA Recipient 🎓</li>
             <li>Advocate for wellness & mental health 🧘🏽‍♀️</li>
+            <li>I'm Dancing adventurer - salsa instructor & dancer during the week, hiker on the weekends 💃🏽🥾</li>
             <li>
-              Dedicated to empowering women & underrepresented communities in
-              tech 💪🏽
+              Dedicated to empowering women & underrepresented communities in tech 💪🏽
             </li>
           </ul>
 
@@ -299,6 +312,7 @@
     <footer id="footer">
       <div class="inner">
         <!-- Links -->
+        <h3 class="footer-links-title">My Links:</h3>
         <ul class="icons">
           <li>
             <a
@@ -360,5 +374,52 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Smart tooltip positioning -->
+    <script>
+      function positionTooltip(tooltip, trigger) {
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const triggerRect = trigger.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+
+        // Reset positioning
+        tooltip.classList.remove("left-edge", "right-edge");
+        tooltip.style.left = "50%";
+        tooltip.style.transform = "translateX(-50%)";
+
+        // Check if tooltip goes off left edge
+        if (tooltipRect.left < 10) {
+          tooltip.classList.add("left-edge");
+        }
+        // Check if tooltip goes off right edge
+        else if (tooltipRect.right > viewportWidth - 10) {
+          tooltip.classList.add("right-edge");
+        }
+      }
+
+      // Apply to name highlight tooltip
+      document
+        .querySelector(".name-highlight")
+        .addEventListener("mouseenter", function () {
+          const tooltip = this.querySelector(".label");
+          setTimeout(() => positionTooltip(tooltip, this), 50);
+        });
+
+      // Apply to footer icon tooltips
+      document.querySelectorAll("#footer .icon").forEach((icon) => {
+        icon.addEventListener("mouseenter", function () {
+          const tooltip = this.querySelector(".label");
+          setTimeout(() => positionTooltip(tooltip, this), 50);
+        });
+      });
+
+      // Apply to button tooltips
+      document.querySelectorAll(".button.large.primary").forEach((button) => {
+        button.addEventListener("mouseenter", function () {
+          const tooltip = this.querySelector(".label");
+          setTimeout(() => positionTooltip(tooltip, this), 50);
+        });
+      });
+    </script>
   </body>
 </html>

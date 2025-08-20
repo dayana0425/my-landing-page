@@ -2142,17 +2142,29 @@ input[type="radio"]+label:before {
 	bottom: 100%;
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(255, 20, 147, 0.8);
 	color: white;
 	padding: 8px 12px;
-	border-radius: 6px;
-	font-size: 0.85em;
-	font-weight: 400;
-	white-space: nowrap;
+	border-radius: 8px;
+	font-size: 0.9em;
+	font-weight: 600;
+	white-space: normal;
 	z-index: 1000;
 	margin-bottom: 15px;
 	opacity: 0;
 	animation: tooltipFadeIn 0.2s ease-in-out forwards;
+	max-width: 220px;
+	min-width: 160px;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.4;
+	letter-spacing: 0.3px;
+	background-clip: padding-box;
+}
+
+#footer .icons .icon:hover .label * {
+	background: transparent !important;
 }
 
 #footer .icons .icon:hover .label:after {
@@ -2162,7 +2174,7 @@ input[type="radio"]+label:before {
 	left: 50%;
 	transform: translateX(-50%);
 	border: 5px solid transparent;
-	border-top-color: rgba(0, 0, 0, 0.9);
+	border-top-color: rgba(255, 20, 147, 0.8);
 }
 
 @keyframes tooltipFadeIn {
@@ -2174,6 +2186,47 @@ input[type="radio"]+label:before {
 	to {
 		opacity: 1;
 		transform: translateX(-50%) translateY(0);
+	}
+}
+
+/* Responsive tooltip positioning for small screens */
+@media screen and (max-width: 736px) {
+
+	.name-highlight:hover .label,
+	#footer .icons .icon:hover .label,
+	.button.large.primary:hover .label {
+		max-width: 200px;
+		min-width: 140px;
+		font-size: 0.85em;
+		padding: 7px 10px;
+		line-height: 1.3;
+		letter-spacing: 0.2px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.name-highlight:hover .label,
+	#footer .icons .icon:hover .label,
+	.button.large.primary:hover .label {
+		left: 0;
+		transform: none;
+		max-width: 180px;
+		min-width: 120px;
+		white-space: normal;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		font-size: 0.8em;
+		padding: 6px 8px;
+		line-height: 1.2;
+		letter-spacing: 0.1px;
+	}
+
+	.name-highlight:hover .label:after,
+	#footer .icons .icon:hover .label:after,
+	.button.large.primary:hover .label:after {
+		left: 20px;
+		transform: none;
 	}
 }
 
@@ -2295,8 +2348,9 @@ input[type="radio"]+label:before {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20px;
+	margin-top: 40px;
 	gap: 15px;
+	width: 100%;
 }
 
 .actions.responsive-buttons li {
@@ -2308,8 +2362,8 @@ input[type="radio"]+label:before {
 /* Desktop screens - keep column layout but adjust positioning */
 @media (min-width: 981px) {
 	.actions.responsive-buttons {
-		align-items: flex-end;
-		margin-top: 0;
+		align-items: center;
+		margin-top: 30px;
 	}
 }
 
@@ -2327,6 +2381,53 @@ input[type="radio"]+label:before {
 	transition: 0.2s ease-in-out;
 	min-width: 140px;
 	white-space: nowrap;
+	position: relative;
+}
+
+/* Button tooltip styling */
+.button.large.primary .label {
+	display: none;
+}
+
+.button.large.primary:hover .label {
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 20, 147, 0.8);
+	color: white;
+	padding: 8px 12px;
+	border-radius: 8px;
+	font-size: 0.9em;
+	font-weight: 600;
+	white-space: normal;
+	z-index: 1000;
+	margin-bottom: 15px;
+	opacity: 0;
+	animation: tooltipFadeIn 0.2s ease-in-out forwards;
+	max-width: 220px;
+	min-width: 160px;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.4;
+	letter-spacing: 0.3px;
+	background-clip: padding-box;
+}
+
+.button.large.primary:hover .label * {
+	background: transparent !important;
+}
+
+.button.large.primary:hover .label:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 5px solid transparent;
+	border-top-color: rgba(255, 20, 147, 0.8);
 }
 
 .button.large.primary:hover {
@@ -2423,6 +2524,7 @@ ul.icons {
 ul.icons li {
 	display: inline-block;
 	padding: 0 1em 0 0;
+	margin: 0 0.5em;
 }
 
 ul.icons li:last-child {
@@ -2809,14 +2911,14 @@ input[type="button"]:disabled,
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	-moz-align-items: -moz-flex-end;
-	-webkit-align-items: -webkit-flex-end;
-	-ms-align-items: -ms-flex-end;
-	align-items: flex-end;
-	-moz-justify-content: space-between;
-	-webkit-justify-content: space-between;
-	-ms-justify-content: space-between;
-	justify-content: space-between;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	-ms-justify-content: flex-start;
+	justify-content: flex-start;
 	background-color: #1f1815;
 	background-attachment: scroll, scroll;
 	background-image: url("images/overlay.png"), url("https://www.toptal.com/designers/subtlepatterns/uploads/watercolor.png");
@@ -2828,7 +2930,7 @@ input[type="button"]:disabled,
 	left: 0;
 	padding: 8em 4em;
 	position: fixed;
-	text-align: right;
+	text-align: center;
 	top: 0;
 	width: 35%;
 }
@@ -2848,6 +2950,10 @@ input[type="button"]:disabled,
 	flex-grow: 1;
 	 */
 	margin: 0 0 2em 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #header strong,
@@ -2870,6 +2976,90 @@ input[type="button"]:disabled,
 	margin: 0;
 }
 
+/* Name highlight styling */
+.name-highlight {
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: linear-gradient(120deg, transparent 0%, #5cc6a7 50%, transparent 100%);
+	background-size: 200% 100%;
+	background-position: 0% 50%;
+	padding: 2px 8px;
+	border-radius: 6px;
+}
+
+.name-highlight:hover {
+	background-position: 100% 50%;
+	transform: scale(1.05);
+}
+
+/* Name highlight tooltip - now uses same system as footer icons */
+.name-highlight {
+	position: relative;
+}
+
+.name-highlight .label {
+	display: none;
+}
+
+.name-highlight:hover .label {
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 20, 147, 0.8);
+	color: white;
+	padding: 8px 12px;
+	border-radius: 8px;
+	font-size: 0.9em;
+	font-weight: 600;
+	white-space: normal;
+	z-index: 1000;
+	margin-bottom: 15px;
+	opacity: 0;
+	animation: tooltipFadeIn 0.2s ease-in-out forwards;
+	max-width: 220px;
+	min-width: 160px;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.4;
+	letter-spacing: 0.3px;
+	background-clip: padding-box;
+}
+
+.name-highlight:hover .label * {
+	background: transparent !important;
+}
+
+.name-highlight:hover .label:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 5px solid transparent;
+	border-top-color: rgba(255, 20, 147, 0.8);
+}
+
+/* Smart positioning to prevent tooltips from going off-screen */
+.name-highlight:hover .label {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.name-highlight:hover .label.left-edge {
+	left: 10px;
+	transform: none;
+}
+
+.name-highlight:hover .label.right-edge {
+	left: auto;
+	right: 10px;
+	transform: none;
+}
+
 #header .image.avatar {
 	margin: 0 0 1em 0;
 	width: 6.25em;
@@ -2877,12 +3067,64 @@ input[type="button"]:disabled,
 
 /* Footer */
 
+.footer-links-title {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1.1em;
+	font-weight: 600;
+	margin: 0 0 1.5em 0;
+	text-align: center;
+	letter-spacing: 0.5px;
+	position: relative;
+}
+
+.footer-links-title:after {
+	content: '';
+	position: absolute;
+	bottom: -0.75em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
 #footer .icons {
 	margin: 1em 0 0 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 #footer .icons a {
 	color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive footer title */
+@media screen and (max-width: 736px) {
+	.footer-links-title {
+		font-size: 1em;
+		margin: 0 0 1.2em 0;
+	}
+
+	.footer-links-title:after {
+		width: 50px;
+		bottom: -0.6em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.footer-links-title {
+		font-size: 0.95em;
+		margin: 0 0 1em 0;
+		letter-spacing: 0.3px;
+	}
+
+	.footer-links-title:after {
+		width: 40px;
+		bottom: -0.5em;
+	}
 }
 
 #footer .copyright {

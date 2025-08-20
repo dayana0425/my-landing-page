@@ -2131,6 +2131,52 @@ input[type="radio"]+label:before {
 	display: none;
 }
 
+/* Enhanced tooltips for footer icons */
+#footer .icons .icon {
+	position: relative;
+}
+
+#footer .icons .icon:hover .label {
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.9);
+	color: white;
+	padding: 8px 12px;
+	border-radius: 6px;
+	font-size: 0.85em;
+	font-weight: 400;
+	white-space: nowrap;
+	z-index: 1000;
+	margin-bottom: 15px;
+	opacity: 0;
+	animation: tooltipFadeIn 0.2s ease-in-out forwards;
+}
+
+#footer .icons .icon:hover .label:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 5px solid transparent;
+	border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes tooltipFadeIn {
+	from {
+		opacity: 0;
+		transform: translateX(-50%) translateY(5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+}
+
 .icon:before {
 	line-height: inherit;
 }
@@ -2243,30 +2289,27 @@ input[type="radio"]+label:before {
 	width: 100%;
 }
 
-/* Default for smaller screens (mobile view) */
+/* Always display buttons in a column layout */
 .actions.responsive-buttons {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin-top: 20px;
+	gap: 15px;
 }
 
 .actions.responsive-buttons li {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
+/* Desktop screens - keep column layout but adjust positioning */
 @media (min-width: 981px) {
 	.actions.responsive-buttons {
-		flex-direction: row;
-		justify-content: flex-end;
+		align-items: flex-end;
 		margin-top: 0;
-	}
-
-	.actions.responsive-buttons li {
-		margin-bottom: 20px;
-		justify-content: flex-end;
-		margin-left: 15px;
 	}
 }
 
@@ -2282,6 +2325,8 @@ input[type="radio"]+label:before {
 	height: 50px;
 	line-height: 1;
 	transition: 0.2s ease-in-out;
+	min-width: 140px;
+	white-space: nowrap;
 }
 
 .button.large.primary:hover {
@@ -2314,13 +2359,13 @@ blockquote {
 	border-left: 4px solid #ccc;
 	line-height: 1.6;
 }
-  
+
 blockquote footer {
 	font-weight: bold;
 	text-align: right;
 	margin-top: 0.5em;
 }
-  
+
 blockquote ul {
 	margin-top: 0.5em;
 	padding-left: 1em;

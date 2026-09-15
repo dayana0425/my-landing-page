@@ -257,11 +257,12 @@
                     required
                   ></textarea>
                 </div>
-                <input
-                  type="hidden"
-                  id="g-recaptcha-response"
-                  name="g-recaptcha-response"
-                />
+                <div class="col-12">
+                  <div
+                    class="g-recaptcha"
+                    data-sitekey="6LcoaLwtAAAAACXHCMj40mSR9-hKnEk3RYuhmxCh"
+                  ></div>
+                </div>
               </div>
               <ul class="actions" style="padding-top: 20px">
                 <li>
@@ -289,25 +290,7 @@
         </div>
       </section>
 
-      <script src="https://www.google.com/recaptcha/api.js?render=6LdFyTYqAAAAAH2GTvfJukVPYrH8rKC8KQnCT6Ys"></script>
-
-      <script>
-        document
-          .getElementById("contactForm")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            grecaptcha.ready(function () {
-              grecaptcha
-                .execute("6LdFyTYqAAAAAH2GTvfJukVPYrH8rKC8KQnCT6Ys", {
-                  action: "submit",
-                })
-                .then(function (token) {
-                  document.getElementById("g-recaptcha-response").value = token;
-                  document.getElementById("contactForm").submit();
-                });
-            });
-          });
-      </script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </div>
 
     <!-- Footer -->
